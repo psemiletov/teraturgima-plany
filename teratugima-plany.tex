@@ -1,0 +1,211 @@
+\documentclass[a5paper,10pt,openany]{book}
+
+\usepackage[top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\usepackage[svgnames]{xcolor} % Required to specify font color
+
+%\documentclass[a4paper,12pt,openany]{scrbook}
+
+%\usepackage{glossaries}
+%\usepackage[xindy]{glossaries}
+%\makeglossaries
+
+%\usepackage{odsfile,lmodern}
+
+%\usepackage{luacode}
+
+\usepackage{multicol}
+
+\usepackage{mathtext}
+\usepackage{makeidx}
+%\usepackage{imakeidx}
+\usepackage{longtable}
+\usepackage[tc]{titlepic}
+
+\usepackage{fontspec}
+
+\usepackage[protrusion=true,expansion,
+tracking=true,letterspace=50]{microtype}
+
+%\SetTracking[ spacing = {25*,166, } ]{ encoding = *, shape = sc }{ 25 }
+
+
+%\usepackage{soulutf8}
+%\usepackage{letterspace}
+
+%\usepackage[toc]{appendix}
+\usepackage[toc,titletoc]{appendix}
+\renewcommand\appendixtocname{Приложения}
+\renewcommand\appendixpagename{Приложения}
+
+%\usepackage{xunicode}
+\usepackage{xltxtra}
+
+\usepackage[normalem]{ulem}
+\usepackage{adjustbox}
+
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{ukrainian}
+\setotherlanguage{english}
+\setotherlanguage{greek}
+\setotherlanguage{latin}
+\setotherlanguage{polish}
+
+\setmainfont[BoldFont={DejaVuSerif-Bold.ttf},
+ItalicFont={DejaVuSerif-Italic.ttf},
+ BoldItalicFont={DejaVuSerif-BoldItalic.ttf}]{DejaVuSerif.ttf}
+
+\setromanfont[BoldFont={DejaVuSerif-Bold.ttf},
+ItalicFont={DejaVuSerif-Italic.ttf},
+ BoldItalicFont={DejaVuSerif-BoldItalic.ttf}]{DejaVuSerif.ttf}
+
+\setsansfont[BoldFont={DejaVuSans-Bold.ttf},
+ItalicFont={DejaVuSans-Oblique.ttf},
+ BoldItalicFont={DejaVuSans-Oblique.ttf}]
+{DejaVuSans.ttf}
+
+
+\setmonofont[BoldFont={DejaVuSansMono-Bold.ttf},
+ItalicFont={DejaVuSansMono-Oblique.ttf},
+ BoldItalicFont={DejaVuSansMono-BoldOblique.ttf}]
+{DejaVuSansMono.ttf}
+
+
+\usepackage{enumitem}
+\usepackage{indentfirst} 
+
+\usepackage{verse}
+
+\usepackage{graphicx}
+
+\usepackage[pdfpagelabels,unicode,plainpages=false]{hyperref}
+
+\hypersetup{pdftitle=Ересь о Киеве. Петр Семилетов.}
+
+
+\usepackage{bookmark} 
+\usepackage{relsize}
+
+\usepackage{tocloft,calc}
+\usepackage[nottoc,numbib]{tocbibind}
+
+
+\renewcommand{\cftchappresnum}{Глава }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries Глава XX}}}
+
+
+\frenchspacing
+\righthyphenmin=2
+
+
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother  
+
+\newcommand\myimgprefix{s-}
+
+%\titlepic{\includegraphics[width=0.50\textwidth]{cover/04.jpg}}
+
+\title{Планы из Тератургимы \\ \textsmaller[2]{редакция 1.0}}
+\author{Петр Семилетов}
+\date{12/09/2024}
+
+
+
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleAT}{\begingroup % Create the command for including the title page in the document
+\newlength{\drop} % Command for generating a specific amount of whitespace
+\drop=0.1\textheight % Define the command as 10% of the total text height
+
+\rule{\textwidth}{1pt}\par % Thick horizontal line
+\vspace{2pt}\vspace{-\baselineskip} % Whitespace between lines
+\rule{\textwidth}{0.4pt}\par % Thin horizontal line
+
+\vspace{\drop} % Whitespace between the top lines and title
+\centering
+\textcolor{Red}{
+{\Huge ПЛАНЫ ИЗ ТЕРАТУРГИМЫ}\\[0.5\baselineskip] % Title line 1
+%{\Large}\mbox{}\\[0.75\baselineskip] % Title line 2
+%{\Huge четвертая редакция}} % Title line 3
+}
+
+\vspace{0.25\drop} 
+\rule{0.3\textwidth}{0.4pt}\par 
+
+\mbox{ }\\
+редакция 1.0\\
+
+%\includegraphics[width=0.40\textwidth]{cover/04.jpg}
+
+\vspace{\drop} 
+
+{\Large \textsc{Петр Семилетов}}\par 
+
+
+\vfill
+%{\large \textcolor{Red}{\plogo}}\\[0.5\baselineskip] % Publisher logo
+{\large \textsc{Самиздат 2024}}\par % Publisher
+
+\vspace*{\drop} 
+
+\rule{\textwidth}{0.4pt}\par
+\vspace{2pt}\vspace{-\baselineskip} 
+
+\rule{\textwidth}{1pt}\par 
+
+\endgroup}
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\titleAT
+
+\newpage
+
+\pagestyle{plain}
+
+\tableofcontents
+
+\input{pre/pre.tex}
+%\input{plan-right/plan-right.tex}
+\input{plan-right/plan-right-text.tex}
+
+
+\backmatter
+
+%\appendix
+%\addappheadtotoc
+
+\part*{Приложения}
+\addcontentsline{toc}{part}{Приложения}
+
+%\input{appendix/dict.tex}
+
+\begin{thebibliography}{999}
+\input{bibitems}
+\end{thebibliography}
+
+
+\newpage
+
+\pagestyle{empty}
+
+\clearpage
+\vspace*{\stretch{2}}
+\begin{center}
+\begin{minipage}{\textwidth}
+\begin{center}Спасибо, что дочитали до этой страницы\end{center}
+\end{minipage}
+\end{center}
+\vspace{\stretch{3}}
+\clearpage
+
+\end{document} 
